@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C35BE67-656E-4202-ADFA-2FFC86A79E50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>workflow</RootNamespace>
+    <AssemblyName>workflow</AssemblyName>
+    <newfilesearch>OnLoadAutoInsert</newfilesearch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="MonoDevelop.Deployment.Linux, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="LexiconDialog.cs" />
+    <Compile Include="gtk-gui\workflow.LexiconDialog.cs" />
+    <Compile Include="TimerDialog.cs" />
+    <Compile Include="gtk-gui\workflow.TimerDialog.cs" />
+    <Compile Include="GetStartedDialog.cs" />
+    <Compile Include="gtk-gui\workflow.GetStartedDialog.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="ConfigurationDialog.cs" />
+    <Compile Include="gtk-gui\workflow.ConfigurationDialog.cs" />
+    <Compile Include="gtk-gui\workflow.LogicalModellerDialog.cs" />
+    <Compile Include="PlanningCalendarDialog.cs" />
+    <Compile Include="gtk-gui\workflow.PlanningCalendarDialog.cs" />
+    <Compile Include="LogicalModellerDialog.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="COPYING.TXT" />
+    <None Include="files\lexicon.txt" />
+    <None Include="graphics\RBM.bmp" />
+    <None Include="graphics\RBM.xcf" />
+    <None Include="graphics\RBMfrontPg.png" />
+    <None Include="graphics\RBMfrontPg.tiff" />
+    <None Include="graphics\RBMhelper.bmp" />
+    <None Include="graphics\RBMhelper.png" />
+    <None Include="graphics\RBMhelper.tiff" />
+    <None Include="graphics\RBMtodo.png" />
+    <None Include="graphics\RBMtodo.tiff" />
+  </ItemGroup>
+</Project>
